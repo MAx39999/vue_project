@@ -1,19 +1,16 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "checkJs": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "jsx": "preserve",
     "jsxImportSource": "vue",
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "lib": ["ESNext", "DOM"],
+    "checkJs": true,
+    "strict": false,
     "paths": {
       "@/*": ["./src/*"]
     }
   },
-  "vueCompilerOptions": {
-    "target": 3.5
-  },
-  "include": ["src/**/*.js", "src/**/*.vue", "src/**/*.json"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }
