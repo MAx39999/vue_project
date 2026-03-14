@@ -1,19 +1,24 @@
 <script setup>
-import Button from './components/Button.vue';
-const currentDate = new Date().toLocaleDateString('ru-RU');
+import { ref } from 'vue'
+import Header from './components/composite/Header.vue';
+import Card from './components/basic/Card.vue';
+const score = ref(100)
+const isFlipped = ref()
+const word = ref()
 </script>
 
 <template>
-    <header>
-    </header>
+    <Header :score="score" />
     <main class="main">
-        <Button>
-            <template #icon> {{ currentDate }} </template>
-            <template #text>Изменить город</template>
-        </Button>
+        <Card :word="word" :isFlipped="isFlipped"></Card>
     </main>
-    <footer>
-    </footer>
 </template>
 
-<style scoped></style>
+<style scoped>
+.main {
+    display: flex;
+    justify-content: center;
+    padding: 60px 50px;
+}
+</style>
+
