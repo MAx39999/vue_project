@@ -1,36 +1,24 @@
 <script setup>
-
-import CitySelect from './components/composite/CitySelect.vue';
-import Stat from './components/basic/Stat.vue';
-const data = {
-    label: "Влажность",
-    stat: "90%"
-}
-
-function getCity(city) {
-    console.log(city)
-}
+import { ref } from 'vue'
+import Header from './components/composite/Header.vue';
+import Card from './components/basic/Card.vue';
+const score = ref(100)
+const isFlipped = ref()
+const word = ref()
 </script>
 
 <template>
-    <header>
-    </header>
+    <Header :score="score" />
     <main class="main">
-        <Stat v-bind="data" />
-        <Stat label="Осадки" stat="0%" />
-        <Stat label="Ветер" stat="3 м/c" />
-
-        <CitySelect @select-city="getCity" />
-
+        <Card :word="word" :isFlipped="isFlipped"></Card>
     </main>
-    <footer>
-    </footer>
 </template>
 
 <style scoped>
 .main {
-    background: var(--color-bg-main);
+    display: flex;
+    justify-content: center;
     padding: 60px 50px;
-    border-radius: 25px;
 }
 </style>
+

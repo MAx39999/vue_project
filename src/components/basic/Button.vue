@@ -1,33 +1,32 @@
 <script setup>
-defineProps({
-    text: String,
-});
+const props = defineProps({
+  score: {
+    type: Number,
+    required: true,
+    }
+  }
+)
 </script>
 
 <template>
     <button class="button">
+        <div class="text">{{ score }}</div>
         <slot />
-        <div class="text">{{ text }}</div>
     </button>
 </template>
 
 <style scoped>
 .button {
     border: none;
-    border-radius: 40px;
-    background: var(--gradient);
-    font-size: 18px;
-    font-weight: 400;
+    border-radius: 36px;
+    background: var(--color-accent);
+    font-size: 16px;
+    font-weight: 700;
     color: var(--color-primary);
-    width: 415px;
-    height: 53px;
+    padding: 6px 16px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 9px;
-}
-
-.button:hover {
-    background: var(--gradient-inverted)
+    gap: 6px;
+    cursor: pointer;
 }
 </style>
